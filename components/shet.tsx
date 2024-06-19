@@ -26,13 +26,13 @@ export function SheetDemo() {
     return null; // Render nothing or a loading indicator on the server
   }
 
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "stitched", href: "/stitched" },
-    { name: "unstitched", href: "/unstitched" },
-    { name: "lawn Collections", href: "/lawn-collections" },
-    { name: "west", href: "/west" },
-  ];
+  // const links = [
+  //   { name: "Home", href: "/" },
+  //   { name: "stitched", href: "/stitched" },
+  //   { name: "unstitched", href: "/unstitched" },
+  //   { name: "lawn Collections", href: "/lawn-collections" },
+  //   { name: "west", href: "/west" },
+  // ];
 
   return (
     <Sheet>
