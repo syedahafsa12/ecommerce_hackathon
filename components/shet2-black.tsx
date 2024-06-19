@@ -23,10 +23,10 @@ export function SheetDemo2() {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Stitched", href: "/Stitched" },
-    { name: "Unstitched", href: "/Unstitched" },
-    { name: "Lawn Collections", href: "/LawnCollections" },
-    { name: "West", href: "/West" },
+    { name: "Stitched", href: "/stitched" },
+    { name: "Unstitched", href: "/unstitched" },
+    { name: "Lawn Collections", href: "/lawn-collections" },
+    { name: "West", href: "/west" },
   ];
 
   if (!isClient) {
@@ -62,7 +62,7 @@ export function SheetDemo2() {
             <div key={idx}>
               <Link
                 className={`no-underline col-span-3 text-sm ${
-                  pathname === link.href ? "text-primary" : ""
+                  pathname === link.href ? "text-black" : ""
                 }`}
                 href={link.href}
               >
