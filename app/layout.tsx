@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // import "bootstrap/dist/js/bootstrap.js";
 import { useEffect } from "react";
 import SheetDemo from "@/components/shet";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import Cart from "../components/cart";
 import Provider from 'next-redux-wrapper';
 import Nav from "@/components/nav";
