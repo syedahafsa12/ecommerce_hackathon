@@ -64,8 +64,13 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
           <div className="flex items-center space-x-2">
         <SignedOut>
           {/* <SignInButton /> */}
-          <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
+          {/* <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
             Sign In
+          </SignInButton> */}
+           <SignInButton mode="modal">
+            <span className="text-black font-semibold py-2 px-4 rounded">
+              Sign In
+            </span>
           </SignInButton>
         </SignedOut>
         <SignedIn>

@@ -136,7 +136,7 @@ export default function ShoppingCartModal() {
         </SheetContent>
       </Sheet>
 
-      {/* Sign In Modal Trigger */}
+      {/* Sign In Modal Trigger
       <div className="fixed bottom-4 right-4">
         <SignedOut>
           <SignInButton mode="modal">
@@ -145,7 +145,7 @@ export default function ShoppingCartModal() {
             </span>
           </SignInButton>
         </SignedOut>
-      </div>
+      </div> */}
 
       {signInModalOpen && (
         <SignInModal onClose={() => setSignInModalOpen(false)} />
@@ -162,7 +162,7 @@ function SignInModal({ onClose }: { onClose: () => void }) {
         <h2 className="text-xl font-semibold mb-4">Sign In</h2>
         <p className="text-gray-700 mb-4">Sign in to continue your checkout.</p>
         {/* Replace with your actual sign-in component or modal */}
-        <SignInComponent onClose={onClose} />
+        {/* <SignInComponent onClose={onClose} /> */}
         <div className="mt-4 flex justify-end">
           <button
             onClick={onClose}
