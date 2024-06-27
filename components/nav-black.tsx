@@ -21,9 +21,14 @@ const Nav2 = () => {
       <div className="flex items-center space-x-2">
         <SignedOut>
           {/* <SignInButton /> */}
-          <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
-            Sign In
+          <SignInButton mode="modal">
+            <span className="text-black font-semibold py-2 px-4 rounded">
+              Sign In
+            </span>
           </SignInButton>
+          {/* <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
+            Sign In
+          </SignInButton> */}
         </SignedOut>
         <SignedIn>
           <UserButton />
