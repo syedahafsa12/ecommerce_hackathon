@@ -12,6 +12,13 @@ import ImageGallery from "@/components/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import Nav2 from "@/components/nav-black";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 import { getProductData } from '@/app/FetchProductData'; // Import the fetching function
 
 export default function ProductPge({ params }: { params: { slug: string } }) {
@@ -36,10 +43,19 @@ export default function ProductPge({ params }: { params: { slug: string } }) {
           <div className="flex items-center space-x-4">
             <SheetDemo2 />
           </div>
-          <div className="flex items-center space-x-4">
-            <Cart2 />
-            <ShoppingCartModal />
-          </div>
+          <div className="flex items-center space-x-2">
+        <SignedOut>
+          {/* <SignInButton /> */}
+          <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
+            Sign In
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <Cart2 />
+        <ShoppingCartModal />
+      </div>
         </header>
 
         <div className="mx-auto max-w-screen-xl px-4 md:px-8">

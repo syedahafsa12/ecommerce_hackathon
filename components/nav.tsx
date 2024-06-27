@@ -1,16 +1,31 @@
-import React from "react";
-import SheetDemo from "./shet"; // Ensure the path is correct
-import Cart from "./cart";
-import ShoppingCartModal from "./ShoppingCartModal"; // Ensure the path is correct
+import React from 'react';
+import SheetDemo from './shet'; // Ensure the path is correct
+import Cart from './cart';
+import ShoppingCartModal from './ShoppingCartModal'; // Ensure the path is correct
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 
 const Nav = () => {
   return (
-    <header className="flex items-center justify-between p-2 bg-transparent mb-6">
+    <header className="flex items-center justify-between p-4 bg-transparent mb-6">
       <div className="flex items-center space-x-4">
         <SheetDemo />
-        {/* <span className="font-semibold text-lg">Syeda Hafsa</span> */}
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2">
+        <SignedOut>
+          {/* <SignInButton /> */}
+          <SignInButton mode="modal" className=" text-white font-semibold py-2 px-4 rounded">
+            Sign In
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <Cart />
         <ShoppingCartModal />
       </div>
@@ -19,6 +34,44 @@ const Nav = () => {
 };
 
 export default Nav;
+
+// import React from "react";
+// import SheetDemo from "./shet"; // Ensure the path is correct
+// import Cart from "./cart";
+// import ShoppingCartModal from "./ShoppingCartModal"; // Ensure the path is correct
+// import { Button } from "./ui/button";
+// import Link from "next/link";
+// import {
+//   ClerkProvider,
+//   SignInButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton
+// } from '@clerk/nextjs'
+
+// const Nav = () => {
+//   return (
+//     <header className="flex items-center justify-between p-2 bg-transparent mb-6">
+//       <div className="flex items-center space-x-4">
+//         <SheetDemo />
+//         {/* <span className="font-semibold text-lg">Syeda Hafsa</span> */}
+//       </div>
+//       <div className="flex items-center space-x-4">
+// {/* <Link href={'/sign-in'}>Sign In</Link> */}
+// <SignedOut>
+//             <SignInButton />
+//           </SignedOut>
+//           <SignedIn>
+//             <UserButton />
+//           </SignedIn>
+//         <Cart />
+//         <ShoppingCartModal />
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Nav;
 
 
 

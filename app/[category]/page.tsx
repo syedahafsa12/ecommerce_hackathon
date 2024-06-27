@@ -7,7 +7,13 @@ import SheetDemo2 from "@/components/shet2-black";
 import Cart2 from "@/components/cart-black";
 import ShoppingCartModal from "@/components/ShoppingCartModal";
 import { client } from "../lib/sanity";
-
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 // Function to fetch data (should be used in server-side context or during SSR)
 async function getData(category: string) {
   const query = `*[_type == "product" && category->name == "${category}"] {
@@ -51,10 +57,23 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
           <div className="flex items-center space-x-4">
             <SheetDemo2 />
           </div>
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <Cart2 />
             <ShoppingCartModal />
-          </div>
+          </div> */}
+          <div className="flex items-center space-x-2">
+        <SignedOut>
+          {/* <SignInButton /> */}
+          <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
+            Sign In
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <Cart2 />
+        <ShoppingCartModal />
+      </div>
         </header>
         <div className="mx-auto max-w-2xl px-4 sm:px-6  lg:max-w-7xl lg:px-8">
           <div className="flex justify-between items-center">

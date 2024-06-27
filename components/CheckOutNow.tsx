@@ -1,4 +1,6 @@
 "use client";
+import ProtectedRoute from '@/components/ProtectedRoute';
+
 
 import { Button } from "@/components/ui/button";
 import { useShoppingCart } from "use-shopping-cart";
@@ -28,6 +30,7 @@ export default function CheckoutNow({
     price_id: price_id,
   };
   return (
+    <ProtectedRoute>
     <Button
       variant="outline" 
       onClick={() => {
@@ -36,5 +39,6 @@ export default function CheckoutNow({
     >
       Checkout Now
     </Button>
+    </ProtectedRoute>
   );
 }

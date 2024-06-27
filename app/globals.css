@@ -117,8 +117,6 @@ body{
     /* 36203A purple */
     /* background-color: #36203A !important; */
   }
-  @media screen {
-    .linksContainer{
-      
-    }
-  }
+  /* @media screen and (min-width:{
+    .navbar-brand2{}
+  } */

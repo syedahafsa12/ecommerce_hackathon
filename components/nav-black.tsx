@@ -3,6 +3,13 @@ import SheetDemo from "./shet"; // Ensure the path is correct
 import Cart from "./cart";
 import Cart2 from "./cart-black";
 import ShoppingCartModal from "./ShoppingCartModal"; // Ensure the path is correct
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 
 const Nav2 = () => {
   return (
@@ -11,8 +18,17 @@ const Nav2 = () => {
         <SheetDemo />
         {/* <span className="font-semibold text-lg">Syeda Hafsa</span> */}
       </div>
-      <div className="flex items-center space-x-4">
-        <Cart2 />
+      <div className="flex items-center space-x-2">
+        <SignedOut>
+          {/* <SignInButton /> */}
+          <SignInButton mode="modal" className=" text-black font-semibold py-2 px-4 rounded">
+            Sign In
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <Cart />
         <ShoppingCartModal />
       </div>
     </header>
